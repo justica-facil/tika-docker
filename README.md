@@ -1,42 +1,30 @@
-# docker-tikaserver
-This repo contains the Dockerfile to create a docker image that contains the latest Ubuntu running the Apache Tika 1.18 Server on Port 9998 using Java 8.
+# Apache Tika
 
-Out-of-the-box the container also includes dependencies for the GDAL and Tesseract OCR parsers.  To balance showing functionality versus the size of the image, this file currently installs the language packs for the following languages:
-* English
-* French
-* German
-* Italian
-* Spanish.
+Este projeto contém o Dockerfile para criação de uma imagem do Apache Tika na
+versão 1.8, utilizando o Java 8. Após montado, o container escuta na porta
+9998.
 
-To install more languages simply update the apt-get command to include the package containing the language you required, or include your own custom packs using an ADD command.
+Esta imagem também tem um parser OCR para o idioma português.
 
-## Usage
 
-First you need to pull down the build from Dockerhub, which can be done by invoking:
+## Uso
 
-    docker pull logicalspark/docker-tikaserver
+Faça o build da imagem com o comando:
 
-Then to run the container, execute the following command:
+    docker build -t 'tika'
 
-    docker run -d -p 9998:9998 logicalspark/docker-tikaserver
+Execute o container com
 
-## Building
+    docker run -d -p 9998:9998 tika
 
-To build the image from scratch, simply invoke:
 
-    docker build -t 'docker-tikaserver' github.com/LogicalSpark/docker-tikaserver
-   
-You can then use the following command (using the name you allocated in the build command as part of -t option):
+## Mais
 
-    docker run -d -p 9998:9998 docker-tikaserver
-    
-## More
+Para mais informações sobre o Apache Tika Server, veja a [documentação do Apache Tika Server](http://wiki.apache.org/tika/TikaJAXRS).
 
-For more info on Apache Tika Server, go to the [Apache Tika Server documentation](http://wiki.apache.org/tika/TikaJAXRS).
+## Autoria
 
-## Author
-
-  * David Meikle (<david@logicalspark.com>)
+  * Repositório originalmente criado por David Meikle (<david@logicalspark.com>)
 
 ## Licence
 
