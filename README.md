@@ -11,7 +11,7 @@ Esta imagem também tem um parser OCR para o idioma português.
 
 Faça o build da imagem com o comando:
 
-    docker build -t 'tika'
+    docker build -t 'tika' .
 
 Execute o container com
 
